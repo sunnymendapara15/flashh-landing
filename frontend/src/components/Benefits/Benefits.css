@@ -1,0 +1,70 @@
+:benefits {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.benefit-card {
+  padding: 48px 36px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 0;
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.benefit-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-card:hover .benefit-icon,
+.benefit-card:hover h3,
+.benefit-card:hover p {
+  color: var(--white);
+}
+
+.benefit-icon-large {
+  font-size: 48px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  transition: color var(--transition-base);
+}
+
+.benefit-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  transition: color var(--transition-base);
+}
